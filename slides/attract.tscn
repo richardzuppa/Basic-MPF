@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c66egkojukykw"]
+[gd_scene load_steps=5 format=3 uid="uid://c66egkojukykw"]
 
 [ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_vc724"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="2_nu6c7"]
+[ext_resource type="Texture2D" uid="uid://to0hxo0luc2e" path="res://icon.svg" id="3_d80c6"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="3_qop2c"]
 
 [node name="Attract" type="Control"]
 layout_mode = 3
@@ -13,7 +16,32 @@ offset_right = 1144.0
 offset_bottom = 643.0
 color = Color(0.149882, 0.28665, 0.274518, 1)
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="MPFCarousel" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_nu6c7")
+carousel_name = "attract"
+
+[node name="mpf_logo" type="Sprite2D" parent="MPFCarousel"]
+position = Vector2(569.5, 273.5)
+scale = Vector2(2.72656, 2.72656)
+texture = ExtResource("3_d80c6")
+
+[node name="credits" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_right = 1146.0
+offset_bottom = 641.0
+theme_override_font_sizes/font_size = 80
+text = "TELA 2
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_qop2c")
+variable_type = 2
+variable_name = "credits_string"
+
+[node name="title" type="Label" parent="MPFCarousel"]
 layout_mode = 0
 offset_right = 1147.0
 offset_bottom = 642.0

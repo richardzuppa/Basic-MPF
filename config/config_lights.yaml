@@ -1,0 +1,16 @@
+#config_version=6
+
+
+lights:
+  # Target_Left
+  led_A:
+    number: 1
+  led_B:
+    number: 2
+  led_C:
+    number: 3
+  led_D:
+    number: 4
+  led_E:
+    number: 5
+ 

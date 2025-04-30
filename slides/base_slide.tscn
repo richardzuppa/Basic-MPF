@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://chekenum4othj"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_3p3sb"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="2_cfebr"]
+
+[node name="BaseSlide" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3p3sb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0.0807414, 0.698978, 0.526361, 1)
+
+[node name="player_score" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 647.0
+theme_override_font_sizes/font_size = 80
+text = "123,456,7
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_cfebr")
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 2.0
+offset_right = 1151.0
+offset_bottom = 142.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 30
+
+[node name="player_number" type="Label" parent="MarginContainer/HFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Player 1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_cfebr")
+variable_name = "number"
+template_string = "Player %s"
+min_players = 2
+
+[node name="player_ball" type="Label" parent="MarginContainer/HFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Ball 1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_cfebr")
+variable_name = "ball"
+template_string = "Ball %s"

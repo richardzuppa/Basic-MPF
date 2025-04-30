@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd0oc3j5dnsbc"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_lecyr"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="2_hdsqo"]
+
+[node name="Hurryup" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lecyr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1147.0
+offset_bottom = 645.0
+color = Color(0.639216, 0.0705882, 0.113725, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1148.0
+offset_bottom = 643.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "HURRY UP!"
+horizontal_alignment = 1
+
+[node name="MPFVariable" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "100,000
+"
+horizontal_alignment = 1
+script = ExtResource("2_hdsqo")
+variable_type = 1
+variable_name = "current_hurryup"
+comma_separate = true
+update_event = "hurryup_value"

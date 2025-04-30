@@ -1,0 +1,177 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctqy5p5hl7t3l"]
+
+[ext_resource type="Texture2D" uid="uid://cn34gku25ojy6" path="res://monitor/playfield.jpg" id="1_ja3ot"]
+[ext_resource type="Script" path="res://addons/gmc-toolbox/playfield/GMCPlayfield.gd" id="1_ywxde"]
+[ext_resource type="Script" path="res://addons/gmc-toolbox/playfield/GMCLight.gd" id="2_p6rpk"]
+[ext_resource type="Texture2D" uid="uid://u5hp0m0sfd0a" path="res://addons/gmc-toolbox/playfield/inserts/circle-insert.svg" id="3_8vw21"]
+[ext_resource type="Script" path="res://addons/gmc-toolbox/playfield/GMCSwitch.gd" id="3_gumh2"]
+[ext_resource type="Texture2D" uid="uid://dnyvyrnbf1qpv" path="res://addons/gmc-toolbox/playfield/icons/switch-inactive.svg" id="5_5bscn"]
+[ext_resource type="Texture2D" uid="uid://dty6coaegtiyf" path="res://addons/gmc-toolbox/playfield/icons/switch-active.svg" id="6_4utx0"]
+
+[node name="Playfield" type="TextureRect"]
+texture = ExtResource("1_ja3ot")
+script = ExtResource("1_ywxde")
+monitor_size = Vector2(540, 1200)
+
+[node name="lights" type="Control" parent="."]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="led_A" type="Sprite2D" parent="lights"]
+position = Vector2(179, 876)
+scale = Vector2(0.18963, 0.18963)
+texture = ExtResource("3_8vw21")
+script = ExtResource("2_p6rpk")
+
+[node name="led_B" type="Sprite2D" parent="lights"]
+position = Vector2(232, 872)
+scale = Vector2(0.18963, 0.18963)
+texture = ExtResource("3_8vw21")
+script = ExtResource("2_p6rpk")
+
+[node name="led_C" type="Sprite2D" parent="lights"]
+position = Vector2(283, 867)
+scale = Vector2(0.18963, 0.18963)
+texture = ExtResource("3_8vw21")
+script = ExtResource("2_p6rpk")
+
+[node name="led_D" type="Sprite2D" parent="lights"]
+position = Vector2(337, 866)
+scale = Vector2(0.18963, 0.18963)
+texture = ExtResource("3_8vw21")
+script = ExtResource("2_p6rpk")
+
+[node name="led_E" type="Sprite2D" parent="lights"]
+position = Vector2(271, 936)
+scale = Vector2(0.18963, 0.18963)
+texture = ExtResource("3_8vw21")
+script = ExtResource("2_p6rpk")
+
+[node name="switches" type="Control" parent="."]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="s_bumper_left" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 212.0
+offset_right = 307.0
+offset_bottom = 360.0
+scale = Vector2(0.608415, 0.651923)
+texture_normal = ExtResource("5_5bscn")
+texture_pressed = ExtResource("6_4utx0")
+stretch_mode = 4
+script = ExtResource("3_gumh2")
+
+[node name="s_bumper_right" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 220.0
+offset_right = 448.0
+offset_bottom = 368.0
+scale = Vector2(0.587429, 0.587429)
+texture_normal = ExtResource("5_5bscn")
+texture_pressed = ExtResource("6_4utx0")
+stretch_mode = 4
+script = ExtResource("3_gumh2")
+
+[node name="s_left_lane" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 697.0
+offset_right = 146.0
+offset_bottom = 845.0
+scale = Vector2(0.618104, 0.618104)
+texture_normal = ExtResource("5_5bscn")
+texture_pressed = ExtResource("6_4utx0")
+stretch_mode = 4
+script = ExtResource("3_gumh2")
+
+[node name="s_flipper_left" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 972.0
+offset_right = 295.0
+offset_bottom = 1120.0
+scale = Vector2(0.587785, 0.587785)
+texture_normal = ExtResource("5_5bscn")
+texture_pressed = ExtResource("6_4utx0")
+stretch_mode = 4
+script = ExtResource("3_gumh2")
+tags = ["left_flipper"]
+
+[node name="s_flipper_right" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 961.0
+offset_right = 415.0
+offset_bottom = 1109.0
+scale = Vector2(0.684475, 0.684475)
+texture_normal = ExtResource("5_5bscn")
+texture_pressed = ExtResource("6_4utx0")
+stretch_mode = 4
+script = ExtResource("3_gumh2")
+tags = ["right_flipper"]
+
+[node name="s_start" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 1112.0
+offset_right = 186.0
+offset_bottom = 1260.0
+scale = Vector2(0.657199, 0.657199)
+texture_normal = ExtResource("5_5bscn")
+texture_pressed = ExtResource("6_4utx0")
+stretch_mode = 4
+script = ExtResource("3_gumh2")
+tags = ["start"]
+
+[node name="s_trough_1" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 1075.0
+offset_right = 395.0
+offset_bottom = 1223.0
+scale = Vector2(0.68162, 0.68162)
+texture_normal = ExtResource("5_5bscn")
+texture_pressed = ExtResource("6_4utx0")
+stretch_mode = 4
+script = ExtResource("3_gumh2")
+
+[node name="s_trough_2" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 1068.0
+offset_right = 477.0
+offset_bottom = 1216.0
+scale = Vector2(0.727722, 0.727722)
+texture_normal = ExtResource("5_5bscn")
+texture_pressed = ExtResource("6_4utx0")
+stretch_mode = 4
+script = ExtResource("3_gumh2")
+
+[node name="s_trough_3" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 1069.0
+offset_right = 560.0
+offset_bottom = 1217.0
+scale = Vector2(0.685877, 0.685877)
+texture_normal = ExtResource("5_5bscn")
+texture_pressed = ExtResource("6_4utx0")
+stretch_mode = 4
+script = ExtResource("3_gumh2")
+
+[node name="s_plunger_lane" type="TextureButton" parent="switches"]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 1030.0
+offset_right = 633.0
+offset_bottom = 1178.0
+scale = Vector2(0.36692, 0.36692)
+texture_normal = ExtResource("5_5bscn")
+texture_pressed = ExtResource("6_4utx0")
+stretch_mode = 4
+script = ExtResource("3_gumh2")
